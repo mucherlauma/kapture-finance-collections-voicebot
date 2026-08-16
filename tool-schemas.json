@@ -1,0 +1,60 @@
+verify_customer
+{
+  "type": "object",
+  "properties": {
+    "phone_last4": {
+      "description": "The last four digits of the customer's registered phone number.",
+      "type": "string"
+    },
+    "customer_name": {
+      "description": "The full name provided by the person answering the call.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "customer_name",
+    "phone_last4"
+  ],
+  "additionalProperties": false
+}
+
+log_promise_to_pay
+{
+  "type": "object",
+  "properties": {
+    "promise_date": {
+      "description": "The date when the customer promises to make the payment.",
+      "type": "string"
+    },
+    "promise_amount": {
+      "description": "The amount the customer promises to pay.",
+      "type": "number"
+    }
+  },
+  "required": [
+    "promise_amount",
+    "promise_date"
+  ],
+  "additionalProperties": false
+}
+
+send_payment_link
+
+{
+  "type": "object",
+  "properties": {
+    "customer_phone": {
+      "description": "The verified customer's phone number to which the payment link should be sent.",
+      "type": "string"
+    },
+    "payment_amount": {
+      "description": "The payment amount the customer wants to pay.",
+      "type": "number"
+    }
+  },
+  "required": [
+    "payment_amount",
+    "customer_phone"
+  ],
+  "additionalProperties": false
+}
